@@ -28,7 +28,23 @@ work.position = "Student";
 work.employer = "Cloud Calculate Xinjiang";
 work.year = 1;
 
-var education = {};
-education["name"] = "Xinjiang University";
-education["years"] = "2015-2019";
-education["city"] = "Urumuqi";
+var education = {
+    "schools": [
+        {
+            "name": "Xinjiang University",
+            "position": "Urumuqi",
+            "degree": "masters",
+            "majors": "Software Engineer",
+            "dates": 2019,
+            "urls": "www.xju.edu.cn/"
+        }
+    ],
+    "onlineCourses": [
+        {
+            "nanoDegree": "FEND engineer",
+            "school": "Udacity",
+            "dates": 2017,
+            "url": "http://example.com"
+        }
+    ]
+}
