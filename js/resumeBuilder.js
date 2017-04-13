@@ -23,3 +23,12 @@ var bio = {
     ],
     "bioPic" : "image/Avater.jpg"
 };
+var work = {};
+work.position = "Student";
+work.employer = "Cloud Calculate Xinjiang";
+work.year = 1;
+
+var education = {};
+education["name"] = "Xinjiang University";
+education["years"] = "2015-2019";
+education["city"] = "Urumuqi";
