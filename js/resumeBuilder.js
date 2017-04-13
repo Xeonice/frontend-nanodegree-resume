@@ -1,14 +1,6 @@
 /*
 This is empty on purpose! Your code to build the resume will go here.
  */
-var formattedName, formattedRole;
-formattedName = HTMLheaderName.replace("%data%", "Douglas");
-var role = "Front-End engineer";
-formattedRole = HTMLheaderRole.replace("%data%", role);
-//让添加字符串在header类的最上层
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
 var bio = {
     "name" : "Douglas",
     "role" : "Front-End engineer／UI Designer",
@@ -21,12 +13,19 @@ var bio = {
     "skills": [
         "Javascript Coding", "Mobile Design", "Web Design", "prototype Design"
     ],
-    "bioPic" : "image/Avater.jpg"
-};
-var work = {};
-work.position = "Student";
-work.employer = "Cloud Calculate Xinjiang";
-work.year = 1;
+    "bioPic" : ["image/Avater.jpg"]
+}
+var work = {
+    "jobs": [
+        {
+            "location": "Urumuqi",
+            "title": "trainee",
+            "employer": "Cloud Calculate Xinjiang",
+            "dates": 1,
+            "description": "first FEND trainee job"
+        }
+    ]
+}
 
 var education = {
     "schools": [
@@ -36,9 +35,9 @@ var education = {
             "degree": "masters",
             "majors": "Software Engineer",
             "dates": 2019,
-            "urls": "www.xju.edu.cn/"
-        }
-    ],
+            "urls": "www.xju.edu.cn/",
+            "major": ["Software"]
+        }],
     "onlineCourses": [
         {
             "nanoDegree": "FEND engineer",
@@ -47,4 +46,15 @@ var education = {
             "url": "http://example.com"
         }
     ]
-}
+};
+var projects = {
+    "Adam Design": [
+        {
+            "titles": "Adam Design UI Design",
+            "dates": 2016,
+            "description": "Adam Design's UI Mobile Design",
+            "images": ["images/Adam_Design.jpg"]
+        }
+    ]
+
+};
