@@ -100,10 +100,19 @@ function display_work() {
 
 display_work();
 
-
+//鼠标追踪函数（在控制台输出X,Y坐标）
 $(document).click(function(loc) {
     var x = loc.pageX;
     var y = loc.pageY;
 
     logClicks(x,y);
 });
+//国际化（姓大写，名首字母大写）函数
+function inname(name) {
+    name = name.trim().split(" ");
+    console.log(name);
+    name[1] = name[1].toUpperCase();
+    name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+    return name[0]+ " "+name[1];
+}
+$("#main").append(internationalizeButton);
