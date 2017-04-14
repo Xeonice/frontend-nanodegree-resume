@@ -21,8 +21,15 @@ var work = {
             "location": "Urumuqi",
             "title": "trainee",
             "employer": "Cloud Calculate Xinjiang",
-            "dates": 1,
-            "description": "first FEND trainee job"
+            "dates": "in progress",
+            "description": "My first job in software company."
+        },
+        {
+            "location": "Urumuqi",
+            "title": "Seller",
+            "employer": "Pioneer Sports Xinjiang",
+            "dates": "1 years",
+            "description": "To sell sport productions."
         }
     ]
 }
@@ -58,8 +65,10 @@ var projects = {
     ]
 
 };
+//添加姓名
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 $("#header").append(formattedName);
+//添加工作技能
 if (bio.skills.length >0){
     $("#header").append(HTMLskillsStart);
     var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
@@ -70,4 +79,19 @@ if (bio.skills.length >0){
     $("#skills").append(formattedSkill);
     formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
     $("#skills").append(formattedSkill);
+}
+//添加工作经历
+for (job = 0; job < work.jobs.length; job++){
+    $("#workExperience").append(HTMLworkStart);
+
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+    var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+    $(".work-entry:last").append(formattedEmployerTitle);
+
+    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+    $(".work-entry:last").append(formattedDates);
+    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+    $(".work-entry:last").append(formattedDescription);
 }
