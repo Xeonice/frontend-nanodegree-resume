@@ -4,7 +4,7 @@ This is empty on purpose! Your code to build the resume will go here.
 var bio = {
     "name" : "Douglas",
     "role" : "Front-End engineer／UI Designer",
-    "contact" : {
+    "contacts" : {
         "mobile" : "18999509255",
         "email" : "ad546971975@gmail.com",
         "location" : "Urumuqi"
@@ -143,3 +143,4 @@ projects.display = function(){
     }
 }
 projects.display();
+$("#mapDiv").append(googleMap);
