@@ -55,15 +55,20 @@ var education = {
     ]
 };
 var projects = {
-    "Adam Design": [
+    "Projects": [
         {
             "titles": "Adam Design UI Design",
             "dates": 2016,
             "description": "Adam Design's UI Mobile Design",
-            "images": ["images/Adam_Design.jpg"]
+            "images": ["images/Adam_Design_UI.jpg"]
+        },
+        {
+            "titles" : "Adam Design Powerpoing Design",
+            "dates" : 2017,
+            "description": "Adam Design's Powerpoints Design",
+            "images": ["images/Adam_Design_PPT.jpg"]
         }
     ]
-
 };
 //添加姓名
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -116,3 +121,25 @@ function inname(name) {
     return name[0]+ " "+name[1];
 }
 $("#main").append(internationalizeButton);
+
+//添加项目信息（封装）
+projects.display = function(){
+    for (count in projects.Projects){
+        $("#projects").append(HTMLprojectStart);
+
+        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.Projects[count].titles);
+        $(".project-entry:last").append(formattedTitle);
+        var formattedDates = HTMLprojectDates.replace("%data%", projects.Projects[count].dates);
+        $(".project-entry:last").append(formattedDates);
+        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.Projects[count].description);
+        $(".project-entry:last").append(formattedDescription);
+
+        if(projects.Projects[count].images.length > 0){
+            for (image in projects.Projects[count].images) {
+                var formattedImages = HTMLprojectImage.replace("%data%", projects.Projects[count].images)
+                $(".project-entry:last").append(formattedImages);
+            }
+        }
+    }
+}
+projects.display();
