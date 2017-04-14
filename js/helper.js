@@ -207,7 +207,7 @@ function initializeMap() {
 
     // creates a Google place search service object. PlacesService does the work of
     // actually searching for location data.
-    var service = new google.maps.places.PlaceService(map);
+    var service = new google.maps.places.PlacesService(map);
 
     // Iterates through the array of locations, creates a search object for each location
       locations.forEach(function(place){
