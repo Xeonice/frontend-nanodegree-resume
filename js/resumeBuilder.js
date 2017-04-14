@@ -81,17 +81,22 @@ if (bio.skills.length >0){
     $("#skills").append(formattedSkill);
 }
 //添加工作经历
-for (job = 0; job < work.jobs.length; job++){
-    $("#workExperience").append(HTMLworkStart);
+function display_work() {
+    for (job = 0; job < work.jobs.length; job++){
+        $("#workExperience").append(HTMLworkStart);
 
-    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-    var formattedEmployerTitle = formattedEmployer + formattedTitle;
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+        var formattedEmployerTitle = formattedEmployer + formattedTitle;
 
-    $(".work-entry:last").append(formattedEmployerTitle);
+        $(".work-entry:last").append(formattedEmployerTitle);
 
-    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-    $(".work-entry:last").append(formattedDates);
-    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-    $(".work-entry:last").append(formattedDescription);
+        var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+        $(".work-entry:last").append(formattedDates);
+        var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+        $(".work-entry:last").append(formattedDescription);
+    }
 }
+
+display_work();
+
