@@ -53,10 +53,10 @@ var education = {
 var projects = {
     "project1": [
         {
-        "title": "Adam Design UI Design",
-        "dates": "2016",
-        "description": "Adam Design's UI Mobile Design",
-        "images": ["images/Adam_Design_UI.jpg"]
+            "title": "Adam Design UI Design",
+            "dates": "2016",
+            "description": "Adam Design's UI Mobile Design",
+            "images": ["images/Adam_Design_UI.jpg"]
         },
         {
             "title": "Adam Design Powerpoing Design",
@@ -82,7 +82,7 @@ bio.display = function() {
     for (skillCount = 0; skillCount < bio.skills.length; skillCount++) {
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[skillCount]);
         $("#skills").append(formattedSkill);
-    };
+    }
 };
 
 work.display = function() {
@@ -151,16 +151,14 @@ projects.display = function() {
         var formattedDescription = HTMLprojectDescription.replace("%data%", projects.project1[count].description);
         $(".project-entry:last").append(formattedDescription);
 
-        if (projects.project1[count].images.length > 0) {
-            for (image in projects.project1[count].images) {
-                var formattedImages = HTMLprojectImage.replace("%data%", projects.project1[count].images)
-                $(".project-entry:last").append(formattedImages);
-            }
+        for (image = 0; image < projects.project1[count].images; image++) {
+            var formattedImages = HTMLprojectImage.replace("%data%", projects.project1[count].images);
+            $(".project-entry:last").append(formattedImages);
         }
     }
-}
+};
 bio.display();
-work.display()
+work.display();
 education.display();
 projects.display();
 $("#mapDiv").append(googleMap);
