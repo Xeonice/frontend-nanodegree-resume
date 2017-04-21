@@ -14,7 +14,7 @@ var bio = {
     "skills": [
         "Javascript Coding", "Mobile Design", "Web Design", "prototype Design"
     ],
-    "biopic": ["images/avater.jpg"]
+    "biopic": "images/avater.jpg"
 };
 var work = {
     "jobs": [{
@@ -40,18 +40,18 @@ var education = {
         "location": "No.499,Xibei Road,Saybagh District,Urumqi",
         "degree": "masters",
         "dates": "2019",
-        "urls": "http://www.xju.edu.cn/",
+        "url": "http://www.xju.edu.cn/",
         "majors": ["Software"]
     }],
     "onlineCourses": [{
         "title": "FEND engineer",
         "school": "Udacity",
         "dates": "2017",
-        "url": "http://example.com"
+        "url": "https://classroom.udacity.com/nanodegrees/nd001-cn-basic/syllabus"
     }]
 };
 var projects = {
-    "project1": [
+    "projects": [
         {
             "title": "Adam Design UI Design",
             "dates": "2016",
@@ -109,12 +109,11 @@ education.display = function() {
         var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[schoolCount].degree);
         var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[schoolCount].majors);
         var formattedDate = HTMLschoolDates.replace("%data%", education.schools[schoolCount].dates);
-
         $(".education-entry:last").append(formattedSchoolName+formattedDegree,formattedDate, formattedPosition, formattedMajors );
     }
-    $("#education").append(HTMLschoolStart);
     $("#education").append(HTMLonlineClasses);
     for(onlineCount = 0; onlineCount < education.onlineCourses.length; onlineCount++){
+        $("#education").append(HTMLschoolStart);
         var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCount].title);
         var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCount].school);
         var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCount].dates);
@@ -141,18 +140,18 @@ education.display = function() {
 // $("#main").append(internationalizeButton);
 
 projects.display = function() {
-    for (count = 0; count <  projects.project1.length; count++) {
+    for (count = 0; count <  projects.projects.length; count++) {
         $("#projects").append(HTMLprojectStart);
 
-        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.project1[count].title);
+        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[count].title);
         $(".project-entry:last").append(formattedTitle);
-        var formattedDates = HTMLprojectDates.replace("%data%", projects.project1[count].dates);
+        var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[count].dates);
         $(".project-entry:last").append(formattedDates);
-        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.project1[count].description);
+        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[count].description);
         $(".project-entry:last").append(formattedDescription);
 
-        for (image = 0; image < projects.project1[count].images; image++) {
-            var formattedImages = HTMLprojectImage.replace("%data%", projects.project1[count].images);
+        for (image = 0; image < projects.projects[count].images; image++) {
+            var formattedImages = HTMLprojectImage.replace("%data%", projects.projects[count].images);
             $(".project-entry:last").append(formattedImages);
         }
     }
