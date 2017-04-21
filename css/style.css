@@ -1,4 +1,4 @@
-body,
+
 div,
 ul,
 li,
@@ -11,7 +11,12 @@ h5,
 h6 {
   padding: 0;
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-size:12px;
+}
+body{
+  background-color: #2B3A42;
+  margin:0;
+  padding:0;
 }
 
 .clear-fix {
@@ -23,34 +28,54 @@ h6 {
 .project-entry {
   padding: 0 5%;
 }
-
-h1 {
-  font-size: 40px;
-  color: #f5a623;
-  line-height: 48px;
-  display: inline;
+/*大标题*/
+.Quantico-Bold-Headline{
+  font-family: Quantico-Bold;
+  font-size: 3rem;
+  color: #FFFFFF;
+  letter-spacing: 3.02px;
 }
-
-h2 {
-  font-weight: bold;
-  font-size: 24px;
-  color: #999;
-  line-height: 29px;
-  padding: 10px;
+/*welcome message*/
+.Quantico-Bold-Script{
+  font-family: Quantico-Bold;
+  font-size: 1.67rem;
+  color: #FFFFFF;
+  letter-spacing: 3.02px;
 }
-
-h3 {
-  font-style: italic;
-  font-size: 20px;
-  color: #000;
-  line-height: 22px;
+.Quantico-Bold-Logo{
+  font-family: Quantico-Bold;
+  font-size: 2rem;
+  color: #FFFFFF;
+  letter-spacing: 3.62px;
+  padding: 0.7% 0 0.7% 0;
 }
-
-h4 {
-  font-weight: bold;
-  font-size: 14px;
-  color: #4a4a4a;
-  line-height: 17px;
+/*Role*/
+.Quantico-Regular{
+  font-family: Quantico-Regular;
+  font-size: 1.33rem;
+  color: #FFFFFF;
+  letter-spacing: 2.41px;
+}
+/*强调文字*/
+.Oxygen-Bold{
+  font-family: Oxygen-Bold;
+  font-size: 1.33rem;
+  color: #FFFFFF;
+  letter-spacing: 2.41px;
+}
+/*正文*/
+.Oxygen-Regular{
+  font-family: Oxygen-Regular;
+  font-size: 1.33rem;
+  color: #FFFFFF;
+  letter-spacing: 2.41px;
+}
+/*小标题*/
+.Oxygen-Light{
+  font-family: Oxygen-Light;
+  font-size: 2rem;
+  color: #FFFFFF;
+  letter-spacing: 3.62px;
 }
 
 h2,
@@ -58,10 +83,17 @@ h3,
 h4,
 h5 {
   padding: 10px 5%;
-
 }
 
-
+.topbar{
+  background-color: #3F5765;
+  width: 100%;
+  height:2.6%;
+}
+.Logo{
+  padding: 0.7% 1.4% 0.7% 21.3%;
+  float: left;
+}
 .date-text {
   font-style: italic;
   font-size: 14px;
@@ -76,7 +108,6 @@ h5 {
   color: #999;
   line-height: 16px;
   float: right;
-
 }
 
 p {
@@ -118,20 +149,12 @@ a {
 }
 
 .gray {
-  background-color: #f3f3f3;
   padding-bottom: 10px;
   clear: both;
 }
 
-.dark-gray {
-  background-color: #4a4a4a;
-}
 
 /* TODO: Replace with image later */
-#header {
-  background-color: #484848;
-}
-
 .flex-box {
   display: -webkit-flex;
   display: flex;

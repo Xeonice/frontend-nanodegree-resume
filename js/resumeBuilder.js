@@ -14,7 +14,7 @@ var bio = {
     "skills": [
         "Javascript Coding", "Mobile Design", "Web Design", "prototype Design"
     ],
-    "biopic": "images/avater.jpg"
+    "biopic": "images/avater.png"
 };
 var work = {
     "jobs": [{
@@ -56,13 +56,13 @@ var projects = {
             "title": "Adam Design UI Design",
             "dates": "2016",
             "description": "Adam Design's UI Mobile Design",
-            "images": ["images/Adam_Design_UI.jpg"]
+            "images": ["images/Adam_Design_UI.png"]
         },
         {
             "title": "Adam Design Powerpoing Design",
             "dates": "2017",
             "description": "Adam Design's Powerpoints Design",
-            "images": ["images/Adam_Design_PPT.jpg"]
+            "images": ["images/Adam_Design_PPT.png"]
         }
     ]
 };
@@ -150,8 +150,8 @@ projects.display = function() {
         var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[count].description);
         $(".project-entry:last").append(formattedDescription);
 
-        for (image = 0; image < projects.projects[count].images; image++) {
-            var formattedImages = HTMLprojectImage.replace("%data%", projects.projects[count].images);
+        for (image = 0; image < projects.projects[count].images.length; image++) {
+            var formattedImages = HTMLprojectImage.replace("%data%", projects.projects[count].images[image]);
             $(".project-entry:last").append(formattedImages);
         }
     }
